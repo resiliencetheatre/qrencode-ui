@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTimer>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,8 +19,10 @@ public:
 
 private slots:
     void on_pushButton_clicked();
+    void updateClock();
 
 private:
     Ui::MainWindow *ui;
+    QTimer *clockUpdateTimer;
 };
 #endif // MAINWINDOW_H

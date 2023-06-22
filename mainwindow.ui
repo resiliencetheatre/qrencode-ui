@@ -17,80 +17,216 @@
    <string notr="true">background-color: black;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>710</y>
-      <width>400</width>
-      <height>71</height>
+      <x>0</x>
+      <y>0</y>
+      <width>480</width>
+      <height>800</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true">color: #00FF00; 
+     <string notr="true">QTabWidget {  
+    background-color:#0f2033;
+    border-top: 2px solid #C2C7CB;  
+} 
+QTabWidget::pane { 
+    border-top: 0px solid #C2C7CB;  
+} 
+
+QTabBar::tab {  
+    background-color:#0f2033;
+    border: 1px solid #4973b4;  
+    min-width: 100px; 
+    min-height:22px;
+    padding: 0px  2px; 
+    color: rgb(255, 255, 255);
+    margin-left: 1px;
+    font: 75 8pt;
+}  
+  
+QTabBar::tab:selected, QTabBar::tab:hover {  
+    background-color: rgb(42,87,147);
+    margin-top: 0px;
+    
+}  
+  
+QTabBar::tab:!selected {  
+    margin-top: 0px;
+}  </string>
+    </property>
+    <property name="tabPosition">
+     <enum>QTabWidget::South</enum>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>QR</string>
+     </attribute>
+     <widget class="QLabel" name="qrLabel">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>200</y>
+        <width>400</width>
+        <height>400</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>650</y>
+        <width>400</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00FF00; 
 border:2px solid #00FF00;</string>
-    </property>
-    <property name="text">
-     <string>Generate</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="titleLabel">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>30</y>
-      <width>411</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>DejaVu Sans Mono</family>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: #00FF00;
+      </property>
+      <property name="text">
+       <string>Generate</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="statLabel">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>60</y>
+        <width>411</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans Mono</family>
+        <pointsize>6</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00FF00;
 </string>
-    </property>
-    <property name="text">
-     <string>QR encode</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="qrLabel">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>290</y>
-      <width>400</width>
-      <height>400</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="statLabel">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>80</y>
-      <width>411</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>DejaVu Sans Mono</family>
-      <pointsize>6</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: #00FF00;
+      </property>
+      <property name="text">
+       <string>Ready</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="titleLabel">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>411</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans Mono</family>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00FF00;
 </string>
-    </property>
-    <property name="text">
-     <string>Ready</string>
-    </property>
+      </property>
+      <property name="text">
+       <string>QR encode</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="timeLabel">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>110</y>
+        <width>400</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00FF00;
+font: 14pt;
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Comms</string>
+     </attribute>
+     <widget class="QPushButton" name="commButton">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>630</y>
+        <width>191</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton {
+ background-color: #000000;
+color: #00FF00; 
+border:2px solid #00FF00;
+font: 8pt;
+
+}
+
+QPushButton:pressed {
+    background-color: #00C000;     
+}</string>
+      </property>
+      <property name="text">
+       <string>1</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="commButton_2">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>630</y>
+        <width>191</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton {
+ background-color: #000000;
+color: #00FF00; 
+border:2px solid #00FF00;
+font: 8pt;
+
+}
+
+QPushButton:pressed {
+    background-color: #00C000;     
+}</string>
+      </property>
+      <property name="text">
+       <string>2</string>
+      </property>
+     </widget>
+    </widget>
    </widget>
   </widget>
  </widget>

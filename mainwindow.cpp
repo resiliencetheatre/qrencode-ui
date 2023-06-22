@@ -39,6 +39,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    clockUpdateTimer = new QTimer(this);
+    connect(clockUpdateTimer, SIGNAL(timeout()), this, SLOT(updateClock()) );
+    clockUpdateTimer->start(500);
 }
 
 MainWindow::~MainWindow()
@@ -49,7 +52,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_clicked()
 {
     QDateTime now = QDateTime::currentDateTime();
-    QString timestamp = now.toString(QLatin1String("ddMMyyyy-hhmmss"));
+    QString timestamp = now.toString(QLatin1String("hhmmss.zzz"));
     QString width = "400";
     QString height = "400";
     QImage barcode = QZXing::encodeData(timestamp, QZXing::EncoderFormat_QR_CODE,
@@ -70,6 +73,15 @@ void MainWindow::on_pushButton_clicked()
     painter.end();
     ui->qrLabel->setPixmap(new_image);
     ui->qrLabel->show();
+}
 
+void MainWindow::updateClock()
+{
+    // ui->timeLabel->setText(QTime::currentTime().toString("hh:mm:ss"));
+    QDateTime date = QDateTime::currentDateTime();
+    QString formattedTime = date.toString("hhmmss.zzz");
+    QByteArray formattedTimeMsg = formattedTime.toLocal8Bit();
+    ui->timeLabel->setText(formattedTimeMsg);
+    on_pushButton_clicked();
 }
 
