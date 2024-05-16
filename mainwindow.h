@@ -18,8 +18,9 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_clicked();
     void updateClock();
+    void on_wifiCodeButton_clicked();
+    void on_accessUrlButton_clicked();
 
 private:
     Ui::MainWindow *ui;

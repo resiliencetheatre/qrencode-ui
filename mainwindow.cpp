@@ -17,14 +17,14 @@
  *
  * Includes qrencode example from https://github.com/ftylitak/qzxing
  *
- * Remember to set font directory:
+ * Remember to set font directory and debug console:
  *
- * QT_QPA_FONTDIR=/usr/share/fonts/dejavu/
+ * QT_QPA_FONTDIR = /usr/share/fonts/dejavu/
+ * QT_ASSUME_STDERR_HAS_CONSOLE = 1
  *
  * Display:
  *
  * https://shop.pimoroni.com/products/hyperpixel-4?variant=12569485443155
- *
  */
 
 #include "mainwindow.h"
@@ -33,6 +33,7 @@
 #include "QTime"
 #include "QPainter"
 #include <QColor>
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -41,7 +42,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     clockUpdateTimer = new QTimer(this);
     connect(clockUpdateTimer, SIGNAL(timeout()), this, SLOT(updateClock()) );
-    clockUpdateTimer->start(500);
+    clockUpdateTimer->start(1000);
 }
 
 MainWindow::~MainWindow()
@@ -49,20 +50,37 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_wifiCodeButton_clicked()
 {
     QDateTime now = QDateTime::currentDateTime();
     QString timestamp = now.toString(QLatin1String("hhmmss.zzz"));
     QString width = "400";
     QString height = "400";
-    QImage barcode = QZXing::encodeData(timestamp, QZXing::EncoderFormat_QR_CODE,
+    QString wifiConnectString = "WIFI:T:WPA;S:edgemap;P:abc12345;;";
+    QImage barcode = QZXing::encodeData(wifiConnectString, QZXing::EncoderFormat_QR_CODE,
                                         QSize(width.toInt(), height.toInt()),
                                         QZXing::EncodeErrorCorrectionLevel_H);
-    /* White QR code
-    ui->qrLabel->setPixmap(QPixmap::fromImage(barcode));
-    ui->qrLabel->show();
-    */
 
+    // Green QR code
+    QPixmap source_image = QPixmap::fromImage(barcode);
+    QRgb base_color = 0x0000FF00;
+    QPixmap new_image = source_image;
+    QPainter painter(&new_image);
+    painter.setCompositionMode(QPainter::CompositionMode_Multiply);
+    painter.fillRect(new_image.rect(), base_color);
+    painter.end();
+    ui->qrLabel->setPixmap(new_image);
+    ui->qrLabel->show();
+}
+
+void MainWindow::on_accessUrlButton_clicked()
+{
+    QString width = "400";
+    QString height = "400";
+    QString edgemapUrlString = "http://10.1.1.1/";
+    QImage barcode = QZXing::encodeData(edgemapUrlString, QZXing::EncoderFormat_QR_CODE,
+                                        QSize(width.toInt(), height.toInt()),
+                                        QZXing::EncodeErrorCorrectionLevel_H);
     // Green QR code
     QPixmap source_image = QPixmap::fromImage(barcode);
     QRgb base_color = 0x0000FF00;
@@ -79,9 +97,12 @@ void MainWindow::updateClock()
 {
     // ui->timeLabel->setText(QTime::currentTime().toString("hh:mm:ss"));
     QDateTime date = QDateTime::currentDateTime();
-    QString formattedTime = date.toString("hhmmss.zzz");
+    QString formattedTime = date.toString("hh:mm:ss"); // .zzz
     QByteArray formattedTimeMsg = formattedTime.toLocal8Bit();
     ui->timeLabel->setText(formattedTimeMsg);
-    on_pushButton_clicked();
+    // on_wifiCodeButton_clicked();
 }
+
+
+
 

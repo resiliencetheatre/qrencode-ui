@@ -84,21 +84,26 @@ QTabBar::tab:!selected {
        <string/>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="wifiCodeButton">
       <property name="geometry">
        <rect>
         <x>40</x>
         <y>650</y>
-        <width>400</width>
+        <width>171</width>
         <height>71</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true">color: #00FF00; 
 border:2px solid #00FF00;</string>
       </property>
       <property name="text">
-       <string>Generate</string>
+       <string>Wifi Code</string>
       </property>
      </widget>
      <widget class="QLabel" name="statLabel">
@@ -143,7 +148,7 @@ border:2px solid #00FF00;</string>
 </string>
       </property>
       <property name="text">
-       <string>QR encode</string>
+       <string>edgemap</string>
       </property>
      </widget>
      <widget class="QLabel" name="timeLabel">
@@ -167,10 +172,32 @@ font: 14pt;
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
+     <widget class="QPushButton" name="accessUrlButton">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>650</y>
+        <width>171</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00FF00; 
+border:2px solid #00FF00;</string>
+      </property>
+      <property name="text">
+       <string>Access URL</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
-      <string>Comms</string>
+      <string>SecurePTT</string>
      </attribute>
      <widget class="QPushButton" name="commButton">
       <property name="geometry">
@@ -226,6 +253,11 @@ QPushButton:pressed {
        <string>2</string>
       </property>
      </widget>
+    </widget>
+    <widget class="QWidget" name="meshtasticTab">
+     <attribute name="title">
+      <string>Meshtastic</string>
+     </attribute>
     </widget>
    </widget>
   </widget>
