@@ -21,6 +21,8 @@ private slots:
     void updateClock();
     void on_wifiCodeButton_clicked();
     void on_accessUrlButton_clicked();
+    void on_backlight10_clicked();
+    void on_backlight100_clicked();
 
 private:
     Ui::MainWindow *ui;

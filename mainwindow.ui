@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>480</width>
-    <height>800</height>
+    <width>800</width>
+    <height>480</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,8 +22,8 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>480</width>
-      <height>800</height>
+      <width>800</width>
+      <height>480</height>
      </rect>
     </property>
     <property name="font">
@@ -65,53 +65,59 @@ QTabBar::tab:!selected {
      <enum>QTabWidget::South</enum>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>3</number>
     </property>
-    <widget class="QWidget" name="tab">
+    <widget class="QWidget" name="front">
      <attribute name="title">
       <string>QR</string>
      </attribute>
      <widget class="QLabel" name="qrLabel">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>200</y>
-        <width>400</width>
-        <height>400</height>
+        <x>580</x>
+        <y>250</y>
+        <width>200</width>
+        <height>200</height>
        </rect>
       </property>
       <property name="text">
        <string/>
       </property>
      </widget>
-     <widget class="QPushButton" name="wifiCodeButton">
+     <widget class="QLabel" name="titleLabel">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>650</y>
-        <width>171</width>
-        <height>71</height>
+        <x>580</x>
+        <y>0</y>
+        <width>200</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <pointsize>8</pointsize>
+        <family>Cantarell</family>
+        <pointsize>18</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #00FF00; 
-border:2px solid #00FF00;</string>
+       <string notr="true">color: #00FF00;
+</string>
       </property>
       <property name="text">
-       <string>Wifi Code</string>
+       <string>edgemap</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="QLabel" name="statLabel">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>60</y>
-        <width>411</width>
+        <x>10</x>
+        <y>420</y>
+        <width>171</width>
         <height>31</height>
        </rect>
       </property>
@@ -129,36 +135,21 @@ border:2px solid #00FF00;</string>
        <string>Ready</string>
       </property>
      </widget>
-     <widget class="QLabel" name="titleLabel">
+     <widget class="QLabel" name="timeLabel">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>20</y>
-        <width>411</width>
-        <height>31</height>
+        <x>580</x>
+        <y>60</y>
+        <width>200</width>
+        <height>21</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>DejaVu Sans Mono</family>
+        <pointsize>14</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: #00FF00;
-</string>
-      </property>
-      <property name="text">
-       <string>edgemap</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="timeLabel">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>110</y>
-        <width>400</width>
-        <height>71</height>
-       </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">color: #00FF00;
@@ -175,15 +166,15 @@ font: 14pt;
      <widget class="QPushButton" name="accessUrlButton">
       <property name="geometry">
        <rect>
-        <x>270</x>
-        <y>650</y>
-        <width>171</width>
-        <height>71</height>
+        <x>580</x>
+        <y>180</y>
+        <width>200</width>
+        <height>65</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <pointsize>8</pointsize>
+        <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -194,63 +185,163 @@ border:2px solid #00FF00;</string>
        <string>Access URL</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="wifiCodeButton">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>100</y>
+        <width>200</width>
+        <height>65</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00FF00; 
+border:2px solid #00FF00;</string>
+      </property>
+      <property name="text">
+       <string>Wifi Code</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="statLabel_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>441</width>
+        <height>261</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00FF00;
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Welcome to Edgemap!&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;You can access &lt;span style=&quot; font-style:italic;&quot;&gt;full world street level map&lt;/span&gt; with this unit without Internet access. Use communication over IP, Twisted pair, HF or LoRA. You can utilize dark fiber and enjoy One Time Pad encrypted Secure PTT.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;See you in #38C3 !!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
     </widget>
-    <widget class="QWidget" name="tab_2">
+    <widget class="QWidget" name="secureptt">
      <attribute name="title">
       <string>SecurePTT</string>
      </attribute>
-     <widget class="QPushButton" name="commButton">
+     <widget class="QPushButton" name="wipeButton">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>140</y>
+        <width>200</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton {
+ background-color: #000000;
+color: #FF0000; 
+border:2px solid #FF0000;
+font: 12pt;
+
+}
+
+QPushButton:pressed {
+    background-color: #00C000;     
+}</string>
+      </property>
+      <property name="text">
+       <string>Wipe</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pttButton">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>50</y>
+        <width>200</width>
+        <height>65</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00FF00; 
+border:2px solid #00FF00;</string>
+      </property>
+      <property name="text">
+       <string>re-key</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="statLabel_3">
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>630</y>
-        <width>191</width>
-        <height>61</height>
+        <y>50</y>
+        <width>441</width>
+        <height>261</height>
        </rect>
       </property>
-      <property name="styleSheet">
-       <string notr="true">
-QPushButton {
- background-color: #000000;
-color: #00FF00; 
-border:2px solid #00FF00;
-font: 8pt;
-
-}
-
-QPushButton:pressed {
-    background-color: #00C000;     
-}</string>
-      </property>
-      <property name="text">
-       <string>1</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="commButton_2">
-      <property name="geometry">
-       <rect>
-        <x>260</x>
-        <y>630</y>
-        <width>191</width>
-        <height>61</height>
-       </rect>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+        <pointsize>10</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">
-QPushButton {
- background-color: #000000;
-color: #00FF00; 
-border:2px solid #00FF00;
-font: 8pt;
-
-}
-
-QPushButton:pressed {
-    background-color: #00C000;     
-}</string>
+       <string notr="true">color: #00FF00;
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
       </property>
       <property name="text">
-       <string>2</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;SecurePTT&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;SecurePTT encrypts your Push-To-Talk traffic with One Time Pad keys and secures your communication over LAN, Internet or point-to-point connection.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
@@ -258,6 +349,136 @@ QPushButton:pressed {
      <attribute name="title">
       <string>Meshtastic</string>
      </attribute>
+    </widget>
+    <widget class="QWidget" name="settings">
+     <attribute name="title">
+      <string>Settings</string>
+     </attribute>
+     <widget class="QPushButton" name="powerOff">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>30</y>
+        <width>200</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton {
+ background-color: #000000;
+color: #FF0000; 
+border:2px solid #FF0000;
+font: 12pt;
+
+}
+
+QPushButton:pressed {
+    background-color: #00C000;     
+}</string>
+      </property>
+      <property name="text">
+       <string>Power Off</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="backlight100">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>160</y>
+        <width>201</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton {
+ background-color: #000000;
+color: #00FF00; 
+border:2px solid #00FF00;
+font: 12pt;
+
+}
+
+QPushButton:pressed {
+    background-color: #00C000;     
+}</string>
+      </property>
+      <property name="text">
+       <string>Bright</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="backlightLabel">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>110</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans Mono</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00FF00;
+</string>
+      </property>
+      <property name="text">
+       <string>Backlight</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="backlight10">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>240</y>
+        <width>201</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton {
+ background-color: #000000;
+color: #00FF00; 
+border:2px solid #00FF00;
+font: 12pt;
+
+}
+
+QPushButton:pressed {
+    background-color: #00C000;     
+}</string>
+      </property>
+      <property name="text">
+       <string>Dim</string>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>

@@ -34,6 +34,7 @@
 #include "QPainter"
 #include <QColor>
 #include <QDebug>
+#include <QFile>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -54,9 +55,9 @@ void MainWindow::on_wifiCodeButton_clicked()
 {
     QDateTime now = QDateTime::currentDateTime();
     QString timestamp = now.toString(QLatin1String("hhmmss.zzz"));
-    QString width = "400";
-    QString height = "400";
-    QString wifiConnectString = "WIFI:T:WPA;S:edgemap;P:abc12345;;";
+    QString width = "200";
+    QString height = "200";
+    QString wifiConnectString = "WIFI:T:WPA;S:edgemapy;P:abc12345;;";
     QImage barcode = QZXing::encodeData(wifiConnectString, QZXing::EncoderFormat_QR_CODE,
                                         QSize(width.toInt(), height.toInt()),
                                         QZXing::EncodeErrorCorrectionLevel_H);
@@ -75,9 +76,9 @@ void MainWindow::on_wifiCodeButton_clicked()
 
 void MainWindow::on_accessUrlButton_clicked()
 {
-    QString width = "400";
-    QString height = "400";
-    QString edgemapUrlString = "http://10.1.1.1/";
+    QString width = "200";
+    QString height = "200";
+    QString edgemapUrlString = "http://edgemapy/";
     QImage barcode = QZXing::encodeData(edgemapUrlString, QZXing::EncoderFormat_QR_CODE,
                                         QSize(width.toInt(), height.toInt()),
                                         QZXing::EncodeErrorCorrectionLevel_H);
@@ -104,5 +105,30 @@ void MainWindow::updateClock()
 }
 
 
+void MainWindow::on_backlight10_clicked()
+{
+    QFile brightnessFile("/sys/class/backlight/10-0045/brightness");
+    if (!brightnessFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        qWarning() << "Failed to open brightness file:" << brightnessFile.errorString();
+        return;
+    }
+    QTextStream out(&brightnessFile);
+    out << "1";
+    brightnessFile.close();
+}
 
+
+
+
+void MainWindow::on_backlight100_clicked()
+{
+    QFile brightnessFile("/sys/class/backlight/10-0045/brightness");
+    if (!brightnessFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        qWarning() << "Failed to open brightness file:" << brightnessFile.errorString();
+        return;
+    }
+    QTextStream out(&brightnessFile);
+    out << "255";
+    brightnessFile.close();
+}
 
