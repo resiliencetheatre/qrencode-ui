@@ -7,6 +7,7 @@ int main(int argc, char *argv[])
 {
     qputenv("QT_IM_MODULE", QByteArray("qtvirtualkeyboard"));
     qputenv("QT_QPA_FONTDIR", QByteArray("/usr/share/fonts/dejavu/"));
+    QLoggingCategory::defaultCategory()->setEnabled(QtDebugMsg, true);
     QApplication a(argc, argv);
     MainWindow w;
     w.show();

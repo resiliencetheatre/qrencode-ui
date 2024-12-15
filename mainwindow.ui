@@ -28,7 +28,8 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>11</pointsize>
+      <family>DejaVu Sans Mono</family>
+      <pointsize>10</pointsize>
      </font>
     </property>
     <property name="styleSheet">
@@ -65,7 +66,7 @@ QTabBar::tab:!selected {
      <enum>QTabWidget::South</enum>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="front">
      <attribute name="title">
@@ -254,7 +255,7 @@ border:2px solid #00FF00;</string>
       <property name="geometry">
        <rect>
         <x>570</x>
-        <y>140</y>
+        <y>380</y>
         <width>200</width>
         <height>61</height>
        </rect>
@@ -284,11 +285,11 @@ QPushButton:pressed {
        <string>Wipe</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pttButton">
+     <widget class="QPushButton" name="rekeyButton">
       <property name="geometry">
        <rect>
         <x>570</x>
-        <y>50</y>
+        <y>300</y>
         <width>200</width>
         <height>65</height>
        </rect>
@@ -311,8 +312,8 @@ border:2px solid #00FF00;</string>
        <rect>
         <x>30</x>
         <y>50</y>
-        <width>441</width>
-        <height>261</height>
+        <width>461</width>
+        <height>171</height>
        </rect>
       </property>
       <property name="font">
@@ -344,6 +345,131 @@ border:2px solid #00FF00;</string>
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QLabel" name="fifoStatusRx">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>50</y>
+        <width>80</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+        <pointsize>12</pointsize>
+        <italic>false</italic>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00FF00;
+border:2px solid #00FF00;
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="fifoStatusTx">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>50</y>
+        <width>80</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+        <pointsize>12</pointsize>
+        <italic>false</italic>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00FF00;
+border:2px solid #00FF00;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="channelStausLabel">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>10</y>
+        <width>200</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans Mono</family>
+        <pointsize>8</pointsize>
+        <italic>false</italic>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00FF00;
+</string>
+      </property>
+      <property name="text">
+       <string>Channel status:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="txKeyStatus">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>130</y>
+        <width>80</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans Mono</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00FF00;
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="rxKeyStatus">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>130</y>
+        <width>80</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans Mono</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00FF00;
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="meshtasticTab">
      <attribute name="title">
@@ -357,9 +483,9 @@ border:2px solid #00FF00;</string>
      <widget class="QPushButton" name="powerOff">
       <property name="geometry">
        <rect>
-        <x>570</x>
-        <y>30</y>
-        <width>200</width>
+        <x>599</x>
+        <y>20</y>
+        <width>171</width>
         <height>61</height>
        </rect>
       </property>
@@ -391,9 +517,9 @@ QPushButton:pressed {
      <widget class="QPushButton" name="backlight100">
       <property name="geometry">
        <rect>
-        <x>570</x>
-        <y>160</y>
-        <width>201</width>
+        <x>600</x>
+        <y>280</y>
+        <width>171</width>
         <height>61</height>
        </rect>
       </property>
@@ -425,8 +551,8 @@ QPushButton:pressed {
      <widget class="QLabel" name="backlightLabel">
       <property name="geometry">
        <rect>
-        <x>570</x>
-        <y>110</y>
+        <x>600</x>
+        <y>240</y>
         <width>171</width>
         <height>31</height>
        </rect>
@@ -434,7 +560,7 @@ QPushButton:pressed {
       <property name="font">
        <font>
         <family>DejaVu Sans Mono</family>
-        <pointsize>12</pointsize>
+        <pointsize>8</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -442,15 +568,15 @@ QPushButton:pressed {
 </string>
       </property>
       <property name="text">
-       <string>Backlight</string>
+       <string>Backlight:</string>
       </property>
      </widget>
      <widget class="QPushButton" name="backlight10">
       <property name="geometry">
        <rect>
-        <x>570</x>
-        <y>240</y>
-        <width>201</width>
+        <x>600</x>
+        <y>350</y>
+        <width>171</width>
         <height>61</height>
        </rect>
       </property>
@@ -477,6 +603,638 @@ QPushButton:pressed {
       </property>
       <property name="text">
        <string>Dim</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="wangatewayLabel">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>320</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans Mono</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00FF00;
+</string>
+      </property>
+      <property name="text">
+       <string>WAN gateway:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="gateway_1">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>360</y>
+        <width>120</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton {
+ background-color: #000000;
+color: #00FF00; 
+border:2px solid #00FF00;
+font: 12pt;
+
+}
+
+QPushButton:pressed {
+    background-color: #00C000;     
+}</string>
+      </property>
+      <property name="text">
+       <string>DE</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="gateway_2">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>360</y>
+        <width>120</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton {
+ background-color: #000000;
+color: #00FF00; 
+border:2px solid #00FF00;
+font: 12pt;
+
+}
+
+QPushButton:pressed {
+    background-color: #00C000;     
+}</string>
+      </property>
+      <property name="text">
+       <string>US</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="gateway_3">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>360</y>
+        <width>120</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton {
+ background-color: #000000;
+color: #00FF00; 
+border:2px solid #00FF00;
+font: 12pt;
+
+}
+
+QPushButton:pressed {
+    background-color: #00C000;     
+}</string>
+      </property>
+      <property name="text">
+       <string>SG</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="gatewayLabel_1">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>420</y>
+        <width>120</width>
+        <height>10</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00FF00;
+background-color: #00FF00;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="gatewayLabel_2">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>420</y>
+        <width>120</width>
+        <height>10</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00FF00;
+background-color: #00FF00;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="gatewayLabel_3">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>420</y>
+        <width>120</width>
+        <height>10</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00FF00;
+background-color: #00FF00;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="macsecSecretLineEdit">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>150</y>
+        <width>251</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans Mono</family>
+        <pointsize>12</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00FF00;
+background-color: #000000;
+border:2px solid #00FF00;
+font: 12pt;
+</string>
+      </property>
+      <property name="text">
+       <string>abc123456</string>
+      </property>
+      <property name="maxLength">
+       <number>16</number>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::PasswordEchoOnEdit</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="macsecLabel">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>110</y>
+        <width>261</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans Mono</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00FF00;
+</string>
+      </property>
+      <property name="text">
+       <string>Word of day</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="submitMacsecSecret">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>150</y>
+        <width>120</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton {
+ background-color: #000000;
+color: #00FF00; 
+border:2px solid #00FF00;
+font: 12pt;
+
+}
+
+QPushButton:pressed {
+    background-color: #00C000;     
+}</string>
+      </property>
+      <property name="text">
+       <string>COMMIT</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="ethernetModeLabel">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>251</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans Mono</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00FF00;
+</string>
+      </property>
+      <property name="text">
+       <string>Wired ethernet mode</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="ethernetDhcpButton">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>120</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton {
+ background-color: #000000;
+color: #00FF00; 
+border:2px solid #00FF00;
+font: 8pt;
+
+}
+
+QPushButton:pressed {
+    background-color: #00C000;     
+}</string>
+      </property>
+      <property name="text">
+       <string>DHCP Client</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="ethernetDhcpButton_2">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>40</y>
+        <width>120</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton {
+ background-color: #000000;
+color: #00FF00; 
+border:2px solid #00FF00;
+font: 8pt;
+
+}
+
+QPushButton:pressed {
+    background-color: #00C000;     
+}</string>
+      </property>
+      <property name="text">
+       <string>DHCP Server</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="ethernetDhcpButton_3">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>40</y>
+        <width>120</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton {
+ background-color: #000000;
+color: #00FF00; 
+border:2px solid #00FF00;
+font: 8pt;
+
+}
+
+QPushButton:pressed {
+    background-color: #00C000;     
+}</string>
+      </property>
+      <property name="text">
+       <string>macsec</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="ethernetLabel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>90</y>
+        <width>120</width>
+        <height>10</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00FF00;
+background-color: #00FF00;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="ethernetLabel_2">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>90</y>
+        <width>120</width>
+        <height>10</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00FF00;
+background-color: #00FF00;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="ethernetLabel_3">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>90</y>
+        <width>120</width>
+        <height>10</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00FF00;
+background-color: #00FF00;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="rfKill">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>100</y>
+        <width>171</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton {
+ background-color: #000000;
+color: #FF0000; 
+border:2px solid #FF0000;
+font: 12pt;
+
+}
+
+QPushButton:pressed {
+    background-color: #00C000;     
+}</string>
+      </property>
+      <property name="text">
+       <string>RF kill</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="rfKillLabel">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>170</y>
+        <width>171</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #000000;
+background-color: #00FF00;</string>
+      </property>
+      <property name="text">
+       <string>RF is enabled</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="securePttTitleLabel">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>200</y>
+        <width>261</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans Mono</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00FF00;
+</string>
+      </property>
+      <property name="text">
+       <string>SecurePTT mode</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="securePttButton">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>240</y>
+        <width>120</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton {
+ background-color: #000000;
+color: #00FF00; 
+border:2px solid #00FF00;
+font: 8pt;
+
+}
+
+QPushButton:pressed {
+    background-color: #00C000;     
+}</string>
+      </property>
+      <property name="text">
+       <string>Unicast</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="securePttButton_2">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>240</y>
+        <width>120</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton {
+ background-color: #000000;
+color: #00FF00; 
+border:2px solid #00FF00;
+font: 8pt;
+
+}
+
+QPushButton:pressed {
+    background-color: #00C000;     
+}</string>
+      </property>
+      <property name="text">
+       <string>Multicast</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="securePttLabel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>290</y>
+        <width>120</width>
+        <height>10</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00FF00;
+background-color: #00FF00;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="securePttLabel_2">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>290</y>
+        <width>120</width>
+        <height>10</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00FF00;
+background-color: #00FF00;</string>
+      </property>
+      <property name="text">
+       <string/>
       </property>
      </widget>
     </widget>
